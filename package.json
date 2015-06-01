@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "del": "^1.2.0",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1",
+    "node-bourbon": "^4.2.2",
+    "run-sequence": "^1.1.0"
+  }
+}
