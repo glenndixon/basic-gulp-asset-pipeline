@@ -1,1 +1,3 @@
-alert("foo");
+import 'angular/angular';
+
+import './controllers/hello'

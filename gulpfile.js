@@ -13,7 +13,7 @@ gulp.task("_scripts", function() {
       debug: !isProduction,
       transform: ["babelify"]
     }))
-    .pipe(rename('app.js'))
+    .pipe(rename('bundle.js'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -22,7 +22,7 @@ gulp.task('_styles', function() {
     .pipe(sass({
       includePaths: bourbon
     }))
-    .pipe(rename('app.css'))
+    .pipe(rename('bundle.css'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -36,4 +36,8 @@ gulp.task('watch', function(callback) {
     gulp.watch('css/**/*.sass', ['_styles']);
     callback();
   });
+});
+
+gulp.task('build', function(callback) {
+  return runSequence('_clean', ['_scripts', '_styles'], callback);
 });
