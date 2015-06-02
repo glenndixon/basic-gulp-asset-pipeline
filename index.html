@@ -4,12 +4,17 @@
     <link href="/dist/bundle.css" rel="stylesheet">
   </head>
   <body>
+
+
     <div ng-controller='HelloController' ng-cloak>
       {{name}}
 
       {{ 4 + 10}}
 
       {{"hello" + " World"}}
+
+
+      <div class="slide-animate" ng-include="templateName"></div>
     </div>
   </body>
 </html>
