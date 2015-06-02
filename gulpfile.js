@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var bourbon = require('node-bourbon').includePaths;
 var runSequence = require('run-sequence');
 var del = require('del');
+var uglify = require('gulp-uglify');
 var isProduction = false;
 
 gulp.task("_scripts", function() {
@@ -13,6 +14,7 @@ gulp.task("_scripts", function() {
       debug: !isProduction,
       transform: ["babelify"]
     }))
+    .pipe(uglify())
     .pipe(rename('bundle.js'))
     .pipe(gulp.dest('dist'));
 });

@@ -1,10 +1,15 @@
 <html ng-app="helloApp">
   <head>
     <script src="/dist/bundle.js"></script>
+    <link href="/dist/bundle.css" rel="stylesheet">
   </head>
   <body>
-    <div ng-controller='HelloController'>
+    <div ng-controller='HelloController' ng-cloak>
       {{name}}
+
+      {{ 4 + 10}}
+
+      {{"hello" + " World"}}
     </div>
   </body>
 </html>
