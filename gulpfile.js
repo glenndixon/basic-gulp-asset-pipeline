@@ -10,6 +10,9 @@ gulp.task('_styles', function() {
   return gulp.src('css/main.scss')
     .pipe(sass({
       includePaths: bourbon
+    }).on('error', function(error){
+      sass.logError(error);
+      this.emit('end');
     }))
     .pipe(rename('app.css'))
     .pipe(gulp.dest('dist'));
@@ -37,7 +40,7 @@ gulp.task('serve', function() {
 
 gulp.task('watch', function(callback) {
   runSequence('build', 'serve', function() {
-    gulp.watch('css/**/*.sass', ['_styles']);
+    gulp.watch('css/**/*.scss', ['_styles']);
     gulp.watch('public/**', ['_public']);
     callback();
   });
