@@ -28,7 +28,7 @@ gulp.task("_scripts", function() {
 });
 
 gulp.task('_styles', function() {
-  return gulp.src('css/main.sass')
+  return gulp.src('styles/main.sass')
     .pipe(sass({
       includePaths: bourbon
     }))
@@ -43,7 +43,7 @@ gulp.task('_clean', function() {
 gulp.task('watch', function(callback) {
   return runSequence('_clean', ['_scripts', '_styles'], function() {
     gulp.watch('js/**/*.js', ['_scripts']);
-    gulp.watch('css/**/*.sass', ['_styles']);
+    gulp.watch('styles/**/*.sass', ['_styles']);
     callback();
   });
 });
